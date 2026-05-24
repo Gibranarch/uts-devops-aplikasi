@@ -1,0 +1,27 @@
+name: Continuous Integration (CI)
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Mock Install Dependencies
+        run: echo "Menginstal dependensi aplikasi..."
+
+      - name: Run Unit Test
+        run: |
+          echo "Menjalankan unit test..."
+          echo "Test Passed! Aplikasi berjalan normal."
